@@ -69,11 +69,11 @@ require('lazy').setup({
   },
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-  --{
-  --  'vyfor/cord.nvim',
-  --  build = ':Cord update',
-  --  -- opts = {}
-  --},
+  {
+    'vyfor/cord.nvim',
+    build = ':Cord update',
+    -- opts = {}
+  },
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -254,7 +254,7 @@ require('lazy').setup({
     opts = {
       options = {
         theme = 'tokyonight-day',
-        icons_enabled = false,
+        icons_enabled = true,
         component_separators = '|',
         section_separators = '',
       },
@@ -518,7 +518,6 @@ vim.defer_fn(function()
     ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-    auto_install = false,
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
     -- Install languages synchronously (only applied to `ensure_installed`)
