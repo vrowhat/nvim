@@ -44,20 +44,20 @@ require('lazy').setup({
     priority = 1000,
     opts = {},
   },
-  {
-    "f-person/auto-dark-mode.nvim",
-    opts = {
-      update_interval = 1000,
-      set_dark_mode = function()
-        vim.api.nvim_set_option_value("background", "dark", {})
-        vim.cmd("colorscheme kanagawa")
-      end,
-      set_light_mode = function()
-        vim.api.nvim_set_option_value("background", "light", {})
-        vim.cmd("colorscheme tokyonight-day")
-      end,
-    },
-  },
+  --{
+  --  "f-person/auto-dark-mode.nvim",
+  --  opts = {
+  --    update_interval = 1000,
+  --    set_dark_mode = function()
+  --      vim.api.nvim_set_option_value("background", "dark", {})
+  --      vim.cmd("colorscheme kanagawa")
+  --    end,
+  --    set_light_mode = function()
+  --      vim.api.nvim_set_option_value("background", "light", {})
+  --      vim.cmd("colorscheme tokyonight-day")
+  --    end,
+  --  },
+  --},
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -83,14 +83,14 @@ require('lazy').setup({
     end,
     ft = { "markdown" },
   },
-  {
-    dir = "~/.config/nvim/lua/nvim-proman/",  -- Path to your plugin directory
-    name = "nvim-proman",  -- Name of your plugin
-    dependencies = { "nvim-tree/nvim-tree.lua", "nvim-lua/plenary.nvim" },  -- Make sure nvim-tree is installed
-    config = function()
-        require("nvim-proman").init()  -- Call the function during plugin setup
-    end
-  },
+  --{
+  --  dir = "~/.config/nvim/lua/nvim-proman/",  -- Path to your plugin directory
+  --  name = "nvim-proman",  -- Name of your plugin
+  --  dependencies = { "nvim-tree/nvim-tree.lua", "nvim-lua/plenary.nvim" },  -- Make sure nvim-tree is installed
+  --  config = function()
+  --      require("nvim-proman").init()  -- Call the function during plugin setup
+  --  end
+  --},
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
@@ -672,14 +672,13 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- gopls = {},
   clangd = {},
   pyright = {},
   rust_analyzer = {},
   ts_ls = {},
   html = { filetypes = { 'html', 'twig', 'hbs'} },
   cssls = { filetypes = {'css'} },
-  gopls = {filetypes = {'go'}},
+  --gopls = {filetypes = {'go'}},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -772,6 +771,8 @@ vim.o.shiftwidth = 2     -- Number of spaces to use for each step of indent
 vim.o.expandtab = true   -- Use spaces instead of tabs
 vim.o.smartindent = true -- Auto-indent new lines
 vim.o.autoindent = true  -- Copy indent from the current line
+
+vim.cmd("colorscheme kanagawa")
 
 
 -- The line beneath this is called `modeline`. See `:help modeline`
