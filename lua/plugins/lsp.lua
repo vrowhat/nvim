@@ -69,6 +69,7 @@ return {
 
       -- Enable the following language servers
       local servers = {
+        astro ={filetypes = {"astro"} },
         clangd = {},
         pyright = {},
         rust_analyzer = {},
