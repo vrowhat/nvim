@@ -82,6 +82,7 @@ return {
             telemetry = { enable = false },
           },
         },
+        tailwindcss = {filetypes = {'astro', 'html', 'tsx'}}
       }
 
       -- Setup neovim lua configuration

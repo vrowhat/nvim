@@ -45,4 +45,9 @@ return {
 
   -- Keybinding helper
   { 'folke/which-key.nvim', opts = {} },
+
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {},
+  },
 }
