@@ -21,18 +21,16 @@ return {
 
 {
   "vyfor/cord.nvim",
-  event = "VeryLazy",
   build = ':Cord update',
-  log_level = "debug",
   opts = {
-    advanced = {
-      discord = {
-        pipe_paths = {
-          "/run/user/1000/discord-ipc-0",
-          "/run/user/1000/discord-ipc-1",
-        },
-      },
-    },
+    -- advanced = {
+    --   discord = {
+    --     pipe_paths = {
+    --       "/run/user/1000/discord-ipc-0",
+    --       "/run/user/1000/discord-ipc-1",
+    --     },
+    --   },
+    -- },
   },
 },
 

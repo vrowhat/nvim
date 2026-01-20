@@ -74,7 +74,8 @@ return {
         ts_ls = {},
         html = { filetypes = { 'html', 'twig', 'hbs' } },
         cssls = { filetypes = { 'css' } },
-        tailwindcss = {filetypes = {'astro', 'html', 'tsx'}}
+        tailwindcss = {filetypes = {'astro', 'html', 'tsx'}},
+        gopls = {filetypes = { 'go'} },
       }
 
       -- Setup neovim lua configuration
@@ -83,15 +84,19 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+      vim.lsp.config('*', {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+
       for server_name, server_config in pairs(servers) do
-        require('lspconfig')[server_name].setup {
-          capabilities = capabilities,
-          on_attach = on_attach,
-          settings = server_config,
+        vim.lsp.config(server_name, {
           filetypes = (server_config or {}).filetypes,
-        }
+          settings = (server_config or {}).settings,
+        })
       end
-      require'lspconfig'.lua_ls.setup {
+
+      vim.lsp.config('lua_ls', {
         on_init = function(client)
           if client.workspace_folders then
             local path = client.workspace_folders[1].name
@@ -123,8 +128,12 @@ return {
         settings = {
           Lua = {}
         },
-        require'lspconfig'.qmlls.setup {},
-      }
+      })
+
+      local enabled_servers = vim.tbl_keys(servers)
+      table.insert(enabled_servers, 'lua_ls')
+      table.insert(enabled_servers, 'qmlls')
+      vim.lsp.enable(enabled_servers)
       end,
     },
 }
