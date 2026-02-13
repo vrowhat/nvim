@@ -74,7 +74,8 @@ return {
         ts_ls = {},
         html = { filetypes = { 'html', 'twig', 'hbs' } },
         cssls = { filetypes = { 'css' } },
-        tailwindcss = {filetypes = {'astro', 'html', 'tsx'}},
+        -- Use lspconfig defaults so TSX/JSX and Tailwind-supported templates attach correctly.
+        tailwindcss = {},
         gopls = {filetypes = { 'go'} },
       }
 
