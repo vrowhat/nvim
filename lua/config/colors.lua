@@ -23,7 +23,7 @@ end)
 require("ibl").setup { indent = { highlight = highlight } }
 
 -- Colorscheme and transparency tweaks
-vim.cmd([[colorscheme kanagawa]])
+vim.cmd([[colorscheme hybrid]])
 vim.cmd('hi Normal ctermbg=NONE guibg=NONE')
 vim.cmd('hi NonText ctermbg=NONE guibg=NONE guifg=NONE')
 vim.cmd('hi LineNr guibg=NONE guifg=NONE')

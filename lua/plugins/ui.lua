@@ -15,7 +15,7 @@ return {
     'nvim-lualine/lualine.nvim',
     opts = {
       options = {
-        theme = 'kanagawa',
+        theme = 'hybrid',
         icons_enabled = true,
         component_separators = '|',
         section_separators = '',
@@ -36,18 +36,9 @@ return {
 
   -- Color schemes
   {
-    'folke/tokyonight.nvim',
+    "HoNamDuong/hybrid.nvim",
     lazy = false,
     priority = 1000,
     opts = {},
-  },
-  {
-    'rebelot/kanagawa.nvim',
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    'catppuccin/nvim',
-    name = 'catppuccin',
   },
 }
